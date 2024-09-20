@@ -1,0 +1,8 @@
+from django.urls import path
+from .views import ListingView, ListingDetailView, BookingView, ReviewView
+
+urlpatterns = [
+    path('listings/', ListingView.as_view(), name='listings'),
+    path('listings/<int:pk>/', ListingDetailView.as_view(), name='listing_detail'),
+    path('bookings/', BookingView.as_view(), name='bookings'),
+    path('listings/<int:listing_id>/reviews/', ReviewView.as_view(), name
